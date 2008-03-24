@@ -6,41 +6,52 @@
 %define	pdir	Test
 %define	pnam	Strict
 Summary:	Test::Strict - Check syntax, presence of use strict; and test coverage
-#Summary(pl):	
+Summary(pl.UTF-8):	Test::Strict - sprawdzanie składni, obecności "use strict" i pokrycia testami
 Name:		perl-Test-Strict
 Version:	0.08
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/S/SM/SMUELLER/Test-Strict-0.08.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Test/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	8eccccf18d453b6e5453c07c7c6beed4
+URL:		http://search.cpan.org/dist/Test-Strict/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Devel::Cover) >= 0.43
+BuildRequires:	perl-Devel-Cover >= 0.43
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The most basic test one can write is "does it compile ?".
-This module tests if the code compiles and play nice with Test::Simple modules.
+The most basic test one can write is "does it compile?". This module
+tests if the code compiles and play nice with Test::Simple modules.
 
-Another good practice this module can test is to "use strict;" in all perl files.
+Another good practice this module can test is to "use strict;" in all
+perl files.
 
-By setting a minimum test coverage through all_cover_ok(), a code author
-can ensure his code is tested above a preset level of kwality throughout the development cycle.
+By setting a minimum test coverage through all_cover_ok(), a code
+author can ensure his code is tested above a preset level of quality
+throughout the development cycle.
 
-Along with Test::Pod, this module can provide the first tests to setup for a module author.
+Along with Test::Pod, this module can provide the first tests to setup
+for a module author.
 
-This module should be able to run under the -T flag for perl >= 5.6.
-All paths are untainted with the following pattern: qr|^([-+@\w./:\\]+)$|
-controlled by $Test::Strict::UNTAINT_PATTERN.
+%description -l pl.UTF-8
+Najbardziej podstawowym testem, który można napisać, to "czy to się
+kompiluje?". Ten moduł sprawdza więc, czy kod się kompiluje i dobrze
+współpracuje z modułami Test::Simple.
 
+Inną dobrą praktyką, jaką może testować ten moduł, to czy wszystkie
+pliki perlowe zawierają "use strict;".
 
-# %description -l pl
-# TODO
+Ustawiając minimalne pokrycie testami poprzez all_cover_ok(), autor
+kodu może upewnić się, że jego kod jest testowany pod kątem
+określonego poziomu jakości.
+
+Wraz z Test::Pod ten moduł może zapewnić autorom modułów pierwsze
+testy.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -65,5 +76,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/Test/*.pm
-#%%{perl_vendorlib}/Test/Strict
 %{_mandir}/man3/*
