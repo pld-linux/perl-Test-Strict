@@ -8,19 +8,20 @@
 Summary:	Test::Strict - Check syntax, presence of use strict; and test coverage
 Summary(pl.UTF-8):	Test::Strict - sprawdzanie składni, obecności "use strict" i pokrycia testami
 Name:		perl-Test-Strict
-Version:	0.14
+Version:	0.37
 Release:	1
-# same as perl
+# same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Test/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d1ef5921787195141ba47b017cd5bce5
+# Source0-md5:	739d91c3404e341245ebd0a0081ddc31
 URL:		http://search.cpan.org/dist/Test-Strict/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Devel-Cover >= 0.43
-BuildRequires:	perl-Test-Pod >= 0.01
+BuildRequires:	perl-Test-Pod >= 1.48
+BuildRequires:	perl-Test-Pod-Coverage >= 1.10
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -76,5 +77,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/Test/*.pm
-%{_mandir}/man3/*
+%{perl_vendorlib}/Test/Strict.pm
+%{_mandir}/man3/Test::Strict.3pm*
