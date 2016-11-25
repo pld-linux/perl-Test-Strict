@@ -20,6 +20,7 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Devel-Cover >= 0.43
+BuildRequires:	perl-Scalar-List-Utils
 BuildRequires:	perl-Test-Pod >= 1.48
 BuildRequires:	perl-Test-Pod-Coverage >= 1.10
 %endif
