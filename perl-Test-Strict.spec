@@ -8,7 +8,7 @@ Summary:	Test::Strict - Check syntax, presence of use strict; and test coverage
 Summary(pl.UTF-8):	Test::Strict - sprawdzanie składni, obecności "use strict" i pokrycia testami
 Name:		perl-Test-Strict
 Version:	0.37
-Release:	1
+Release:	2
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
